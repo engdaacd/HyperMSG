@@ -45,7 +45,7 @@ How it connects to the bot:
 Example:
 
 ```html
-<aside id="siteChatWidget" data-whatsapp-phone="254700016642">
+<aside id="siteChatWidget" data-whatsapp-phone="15551234567">
 ```
 
 Use the same phone number that appears as `CONNECTED` in the dashboard instance card.

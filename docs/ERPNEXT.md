@@ -48,7 +48,7 @@ Payload:
 ```json
 {
   "instanceId": "nextmsg-instance-id",
-  "to": "+254700016642",
+  "to": "+15551234567",
   "body": "Hello from ERPNext",
   "referenceDoctype": "Customer",
   "referenceName": "CUST-0001"

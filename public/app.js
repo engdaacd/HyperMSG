@@ -14,7 +14,7 @@ Content-Type: application/json
 
 {
   "instanceId": "instance_uuid",
-  "to": "+254700016642",
+  "to": "+15551234567",
   "body": "Hello from NextMsg"
 }`,
   curl: `curl -X POST http://localhost:4000/messages/send \\
@@ -22,7 +22,7 @@ Content-Type: application/json
   -H "Content-Type: application/json" \\
   -d '{
     "instanceId": "instance_uuid",
-    "to": "+254700016642",
+    "to": "+15551234567",
     "body": "Hello from NextMsg"
   }'`,
   node: `const response = await fetch("http://localhost:4000/messages/send", {
@@ -33,7 +33,7 @@ Content-Type: application/json
   },
   body: JSON.stringify({
     instanceId: "instance_uuid",
-    to: "+254700016642",
+    to: "+15551234567",
     body: "Hello from NextMsg"
   })
 });
@@ -47,7 +47,7 @@ console.log(await response.json());`,
   },
   body: JSON.stringify({
     instanceId: "instance_uuid",
-    to: "+254700016642",
+    to: "+15551234567",
     body: "Hello from NextMsg"
   })
 }).then((response) => response.json()).then(console.log);`,
@@ -55,7 +55,7 @@ console.log(await response.json());`,
   "http://localhost:4000/messages/send",
   {
     instanceId: "instance_uuid",
-    to: "+254700016642",
+    to: "+15551234567",
     body: "Hello from NextMsg"
   },
   {
@@ -71,7 +71,7 @@ response = requests.post(
     headers={"Authorization": "Bearer nmsg_xxx"},
     json={
         "instanceId": "instance_uuid",
-        "to": "+254700016642",
+        "to": "+15551234567",
         "body": "Hello from NextMsg",
     },
     timeout=15,
@@ -81,7 +81,7 @@ print(response.json())`,
   php: `<?php
 $payload = json_encode([
   "instanceId" => "instance_uuid",
-  "to" => "+254700016642",
+  "to" => "+15551234567",
   "body" => "Hello from NextMsg",
 ]);
 
@@ -101,7 +101,7 @@ echo curl_exec($ch);`,
 String json = """
 {
   "instanceId": "instance_uuid",
-  "to": "+254700016642",
+  "to": "+15551234567",
   "body": "Hello from NextMsg"
 }
 """;
@@ -121,7 +121,7 @@ var response = await client.PostAsJsonAsync(
   "http://localhost:4000/messages/send",
   new {
     instanceId = "instance_uuid",
-    to = "+254700016642",
+    to = "+15551234567",
     body = "Hello from NextMsg"
   }
 );
@@ -137,7 +137,7 @@ client.DefaultRequestHeaders.Authorization =
 var json = """
 {
   "instanceId": "instance_uuid",
-  "to": "+254700016642",
+  "to": "+15551234567",
   "body": "Hello from NextMsg"
 }
 """;
@@ -158,7 +158,7 @@ import (
 )
 
 func main() {
-  body := []byte(\`{"instanceId":"instance_uuid","to":"+254700016642","body":"Hello from NextMsg"}\`)
+  body := []byte(\`{"instanceId":"instance_uuid","to":"+15551234567","body":"Hello from NextMsg"}\`)
   req, _ := http.NewRequest("POST", "http://localhost:4000/messages/send", bytes.NewBuffer(body))
   req.Header.Set("Authorization", "Bearer nmsg_xxx")
   req.Header.Set("Content-Type", "application/json")
@@ -174,14 +174,14 @@ request["Authorization"] = "Bearer nmsg_xxx"
 request["Content-Type"] = "application/json"
 request.body = {
   instanceId: "instance_uuid",
-  to: "+254700016642",
+  to: "+15551234567",
   body: "Hello from NextMsg"
 }.to_json
 
 puts Net::HTTP.start(uri.hostname, uri.port) { |http| http.request(request) }.body`,
   vbnet: `Using client As New HttpClient()
   client.DefaultRequestHeaders.Add("Authorization", "Bearer nmsg_xxx")
-  Dim json = "{""instanceId"":""instance_uuid"",""to"":""+254700016642"",""body"":""Hello from NextMsg""}"
+  Dim json = "{""instanceId"":""instance_uuid"",""to"":""+15551234567"",""body"":""Hello from NextMsg""}"
   Dim content = New StringContent(json, Encoding.UTF8, "application/json")
   Dim response = Await client.PostAsync("http://localhost:4000/messages/send", content)
   Console.WriteLine(Await response.Content.ReadAsStringAsync())
@@ -190,7 +190,7 @@ End Using`,
 curl_easy_setopt(curl, CURLOPT_URL, "http://localhost:4000/messages/send");
 curl_easy_setopt(curl, CURLOPT_POST, 1L);
 curl_easy_setopt(curl, CURLOPT_POSTFIELDS,
-  "{\\"instanceId\\":\\"instance_uuid\\",\\"to\\":\\"+254700016642\\",\\"body\\":\\"Hello from NextMsg\\"}");
+  "{\\"instanceId\\":\\"instance_uuid\\",\\"to\\":\\"+15551234567\\",\\"body\\":\\"Hello from NextMsg\\"}");
 struct curl_slist *headers = NULL;
 headers = curl_slist_append(headers, "Authorization: Bearer nmsg_xxx");
 headers = curl_slist_append(headers, "Content-Type: application/json");
@@ -202,7 +202,7 @@ curl_easy_perform(curl);`,
   {:headers {"Authorization" "Bearer nmsg_xxx"}
    :content-type :json
    :form-params {:instanceId "instance_uuid"
-                 :to "+254700016642"
+                 :to "+15551234567"
                  :body "Hello from NextMsg"}})`,
   dart: `final response = await http.post(
   Uri.parse("http://localhost:4000/messages/send"),
@@ -212,7 +212,7 @@ curl_easy_perform(curl);`,
   },
   body: jsonEncode({
     "instanceId": "instance_uuid",
-    "to": "+254700016642",
+    "to": "+15551234567",
     "body": "Hello from NextMsg",
   }),
 );`,
@@ -221,7 +221,7 @@ request.httpMethod = "POST"
 request.setValue("Bearer nmsg_xxx", forHTTPHeaderField: "Authorization")
 request.setValue("application/json", forHTTPHeaderField: "Content-Type")
 request.httpBody = """
-{"instanceId":"instance_uuid","to":"+254700016642","body":"Hello from NextMsg"}
+{"instanceId":"instance_uuid","to":"+15551234567","body":"Hello from NextMsg"}
 """.data(using: .utf8)
 
 URLSession.shared.dataTask(with: request) { data, _, _ in
@@ -231,7 +231,7 @@ URLSession.shared.dataTask(with: request) { data, _, _ in
 [request setHTTPMethod:@"POST"];
 [request setValue:@"Bearer nmsg_xxx" forHTTPHeaderField:@"Authorization"];
 [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-[request setHTTPBody:[@"{\\"instanceId\\":\\"instance_uuid\\",\\"to\\":\\"+254700016642\\",\\"body\\":\\"Hello from NextMsg\\"}" dataUsingEncoding:NSUTF8StringEncoding]];
+[request setHTTPBody:[@"{\\"instanceId\\":\\"instance_uuid\\",\\"to\\":\\"+15551234567\\",\\"body\\":\\"Hello from NextMsg\\"}" dataUsingEncoding:NSUTF8StringEncoding]];
 [[NSURLSession.sharedSession dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
   NSLog(@"%@", [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
 }] resume];`,
@@ -241,7 +241,7 @@ URLSession.shared.dataTask(with: request) { data, _, _ in
 
 $body = @{
   instanceId = "instance_uuid"
-  to = "+254700016642"
+  to = "+15551234567"
   body = "Hello from NextMsg"
 } | ConvertTo-Json
 
@@ -252,10 +252,10 @@ INSTANCE_ID="instance_uuid"
 curl -s http://localhost:4000/messages/send \\
   -H "Authorization: Bearer $TOKEN" \\
   -H "Content-Type: application/json" \\
-  -d "{\\"instanceId\\":\\"$INSTANCE_ID\\",\\"to\\":\\"+254700016642\\",\\"body\\":\\"Hello from NextMsg\\"}"`,
+  -d "{\\"instanceId\\":\\"$INSTANCE_ID\\",\\"to\\":\\"+15551234567\\",\\"body\\":\\"Hello from NextMsg\\"}"`,
   android: `val client = OkHttpClient()
 val body = """
-{"instanceId":"instance_uuid","to":"+254700016642","body":"Hello from NextMsg"}
+{"instanceId":"instance_uuid","to":"+15551234567","body":"Hello from NextMsg"}
 """.toRequestBody("application/json".toMediaType())
 
 val request = Request.Builder()
@@ -272,7 +272,7 @@ request.addValue("Bearer nmsg_xxx", forHTTPHeaderField: "Authorization")
 request.addValue("application/json", forHTTPHeaderField: "Content-Type")
 request.httpBody = try JSONSerialization.data(withJSONObject: [
   "instanceId": "instance_uuid",
-  "to": "+254700016642",
+  "to": "+15551234567",
   "body": "Hello from NextMsg"
 ])
 

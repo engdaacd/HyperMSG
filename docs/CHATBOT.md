@@ -30,6 +30,26 @@ Open the dashboard and use **WhatsApp Chatbot**:
 - Priority: lower number runs first.
 - Response: WhatsApp auto-reply text.
 
+## Website Chat Button
+
+The landing page includes a floating WhatsApp chat button for public visitors.
+
+How it connects to the bot:
+
+1. Edit `public/index.html` and set `data-whatsapp-phone` on `#siteChatWidget` to your connected WhatsApp number without `+`, spaces, or dashes.
+2. A visitor clicks the website chat button or quick reply.
+3. The browser opens `wa.me` with a pre-filled message to your WhatsApp number.
+4. When the visitor sends the message in WhatsApp, your connected NextMsg instance receives it.
+5. The dashboard chatbot rules match the incoming text and send the auto-reply.
+
+Example:
+
+```html
+<aside id="siteChatWidget" data-whatsapp-phone="254700016642">
+```
+
+Use the same phone number that appears as `CONNECTED` in the dashboard instance card.
+
 ## Example Rules
 
 Greeting:

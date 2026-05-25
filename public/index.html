@@ -37,6 +37,36 @@
           </div>
         </section>
 
+        <aside class="site-chat" id="siteChatWidget" data-whatsapp-phone="254700016642" aria-label="WhatsApp chatbot">
+          <button class="site-chat-toggle" id="siteChatToggle" type="button" aria-expanded="false" aria-controls="siteChatPanel">
+            <span class="wa-glyph">WA</span>
+            <span>Hello, how can I help you?</span>
+          </button>
+          <div class="site-chat-panel" id="siteChatPanel" hidden>
+            <div class="site-chat-head">
+              <span class="wa-glyph">WA</span>
+              <div>
+                <strong>NextMsg WhatsApp Bot</strong>
+                <small>Typically replies instantly</small>
+              </div>
+              <button id="siteChatClose" type="button" aria-label="Close WhatsApp chat">×</button>
+            </div>
+            <div class="site-chat-body">
+              <p class="bot-bubble">Hi. Ask about pricing, API setup, ERPNext integration, or connecting WhatsApp.</p>
+              <div class="quick-replies">
+                <button type="button" data-chat-message="Hi, I want to test the NextMsg WhatsApp API.">Test API</button>
+                <button type="button" data-chat-message="Hi, how do I connect WhatsApp with ERPNext?">ERPNext</button>
+                <button type="button" data-chat-message="Hi, I need help setting up a WhatsApp chatbot.">Chatbot setup</button>
+              </div>
+              <form id="siteChatForm">
+                <input name="message" placeholder="Type your message" value="Hi, I need help with NextMsg" required />
+                <button type="submit">Chat</button>
+              </form>
+              <small>Opens WhatsApp. Auto-replies work when your dashboard instance is connected and chatbot rules are enabled.</small>
+            </div>
+          </div>
+        </aside>
+
         <section class="language-strip" aria-label="Supported API examples">
           <span class="lang-card"><i class="lang-icon">🌐</i><strong>REST</strong></span>
           <span class="lang-card"><i class="lang-icon">php</i><strong>PHP</strong></span>
@@ -356,6 +386,10 @@
         </div>
         <div class="panel wide">
           <h2>WhatsApp Chatbot</h2>
+          <div class="setup-note">
+            <strong>How this works:</strong>
+            <span>Connect an instance, create rules below, then visitors message your WhatsApp number from the website chat button. Incoming messages are matched by priority and trigger, and NextMsg sends the saved auto-reply through your connected WhatsApp account.</span>
+          </div>
           <form id="chatbotRuleForm" class="chatbot-form">
             <input name="name" placeholder="Rule name, e.g. Greeting" required />
             <select name="instanceId" id="chatbotInstanceSelect">

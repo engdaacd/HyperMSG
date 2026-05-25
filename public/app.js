@@ -393,6 +393,45 @@ function initLandingInteractions() {
 
   volume?.addEventListener("input", updateCalculator);
   if (volume) updateCalculator();
+
+  const chatWidget = document.querySelector("#siteChatWidget");
+  const chatToggle = document.querySelector("#siteChatToggle");
+  const chatPanel = document.querySelector("#siteChatPanel");
+  const chatClose = document.querySelector("#siteChatClose");
+  const chatForm = document.querySelector("#siteChatForm");
+
+  function setChatOpen(open) {
+    if (!chatPanel || !chatToggle) return;
+    chatPanel.hidden = !open;
+    chatToggle.setAttribute("aria-expanded", String(open));
+  }
+
+  function openWhatsApp(message) {
+    const phone = chatWidget?.dataset.whatsappPhone || "";
+    const normalizedPhone = phone.replace(/[^\d]/g, "");
+    const text = encodeURIComponent(message.trim() || "Hi, I need help with NextMsg");
+    window.open(`https://wa.me/${normalizedPhone}?text=${text}`, "_blank", "noopener,noreferrer");
+  }
+
+  chatToggle?.addEventListener("click", () => {
+    setChatOpen(chatPanel.hidden);
+  });
+
+  chatClose?.addEventListener("click", () => {
+    setChatOpen(false);
+  });
+
+  document.querySelectorAll("[data-chat-message]").forEach((button) => {
+    button.addEventListener("click", () => {
+      openWhatsApp(button.dataset.chatMessage);
+    });
+  });
+
+  chatForm?.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const data = Object.fromEntries(new FormData(event.currentTarget));
+    openWhatsApp(data.message);
+  });
 }
 
 function row(html) {

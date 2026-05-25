@@ -170,6 +170,136 @@ a { color: inherit; text-decoration: none; }
   letter-spacing: 0;
 }
 
+.site-chat {
+  position: fixed;
+  left: 24px;
+  bottom: 24px;
+  z-index: 30;
+  width: min(360px, calc(100vw - 32px));
+  pointer-events: none;
+}
+
+.site-chat-toggle,
+.site-chat-panel {
+  pointer-events: auto;
+}
+
+.site-chat-toggle {
+  min-height: 54px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 999px;
+  padding: 0 18px 0 8px;
+  background: #fff;
+  color: #101828;
+  border: 1px solid #e4e7ec;
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.18);
+}
+
+.wa-glyph {
+  width: 38px;
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #22c55e;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0;
+}
+
+.site-chat-panel {
+  margin-bottom: 12px;
+  overflow: hidden;
+  border-radius: 14px;
+  background: #fff;
+  border: 1px solid #e4e7ec;
+  box-shadow: 0 24px 70px rgba(15, 23, 42, 0.22);
+}
+
+.site-chat-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  background: linear-gradient(135deg, var(--brand), var(--brand-2));
+  color: #fff;
+}
+
+.site-chat-head div {
+  display: grid;
+  gap: 2px;
+  flex: 1;
+}
+
+.site-chat-head small {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.site-chat-head button {
+  width: 34px;
+  min-height: 34px;
+  padding: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.16);
+  box-shadow: none;
+  font-size: 22px;
+}
+
+.site-chat-body {
+  display: grid;
+  gap: 14px;
+  padding: 16px;
+}
+
+.bot-bubble {
+  margin: 0;
+  max-width: 88%;
+  padding: 12px 14px;
+  border-radius: 14px 14px 14px 4px;
+  background: #f2f4f7;
+  color: #344054;
+  line-height: 1.45;
+}
+
+.quick-replies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.quick-replies button {
+  min-height: 34px;
+  border-radius: 999px;
+  padding: 0 12px;
+  background: #ecfdf3;
+  color: #027a48;
+  box-shadow: none;
+}
+
+#siteChatForm {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+  margin: 0;
+}
+
+#siteChatForm input {
+  min-width: 0;
+}
+
+#siteChatForm button {
+  min-width: 76px;
+}
+
+.site-chat-body small {
+  color: #667085;
+  line-height: 1.45;
+}
+
 .next-section {
   padding: 92px max(22px, calc((100vw - 1120px) / 2));
 }
@@ -560,6 +690,17 @@ button:disabled, select:disabled { opacity: 0.55; cursor: not-allowed; }
 .stack-form textarea { grid-column: 1 / 3; }
 .chatbot-form { display: grid; grid-template-columns: 1fr 1fr 180px 1fr 110px auto; align-items: start; }
 .chatbot-form textarea { grid-column: 1 / 5; }
+.setup-note {
+  display: grid;
+  gap: 6px;
+  margin: 0 0 14px;
+  padding: 14px;
+  border: 1px solid color-mix(in srgb, var(--brand-2) 28%, #dce3e8);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--brand-2) 8%, white);
+  color: #344054;
+  line-height: 1.5;
+}
 .checkbox-line {
   min-height: 40px;
   display: inline-flex;
@@ -651,10 +792,28 @@ body.midnight .tutorial-grid article,
 body.midnight .price-grid article,
 body.midnight .faq-item,
 body.midnight .calculator-card,
-body.midnight .signin-card {
+body.midnight .signin-card,
+body.midnight .site-chat-panel {
   background: #111827;
   border-color: #334155;
   color: #f8fafc;
+}
+
+body.midnight .site-chat-toggle,
+body.midnight .bot-bubble {
+  background: #111827;
+  border-color: #334155;
+  color: #f8fafc;
+}
+
+body.midnight .site-chat-body small,
+body.midnight .setup-note {
+  color: #cbd5e1;
+}
+
+body.midnight .setup-note {
+  background: #111827;
+  border-color: #334155;
 }
 
 .logo-mark::first-letter,
@@ -915,5 +1074,15 @@ body.midnight .calculator-section { background: #0f172a; }
   .rule-row { grid-template-columns: 1fr; }
   .stack-form textarea { grid-column: auto; }
   .chatbot-form textarea { grid-column: auto; }
+  .site-chat {
+    left: 16px;
+    bottom: 16px;
+  }
+  .site-chat-toggle span:last-child {
+    max-width: 210px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
   #dashboardView { padding: 16px; }
 }

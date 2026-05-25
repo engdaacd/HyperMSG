@@ -24,8 +24,8 @@ npm run dev
 In separate terminals:
 
 ```bash
-npm run worker
-npm run webhook-worker
+npm run worker:dev
+npm run webhook-worker:dev
 ```
 
 Open `http://localhost:4000`, register, create an instance, click Connect, and scan the QR code.
@@ -50,8 +50,35 @@ Run the API and workers in separate terminals, or under a process manager:
 
 ```bash
 npm run dev
+npm run worker:dev
+npm run webhook-worker:dev
+```
+
+## Production Mode
+
+Production does not use `npm run dev` or `tsx watch`. Build the app first, then run the compiled JavaScript:
+
+```bash
+cp .env.production.example .env
+npm ci
+npx prisma generate
+npx prisma migrate deploy
+npm run build
+npm start
+```
+
+Run workers in separate processes:
+
+```bash
 npm run worker
 npm run webhook-worker
+```
+
+For a live Ubuntu server, use PM2:
+
+```bash
+pm2 start ecosystem.config.cjs
+pm2 save
 ```
 
 ## Important Production Note

@@ -58,7 +58,7 @@ If GitHub auth is not configured, upload the project with `scp` or your hosting 
 ## 4. Configure Environment
 
 ```bash
-cp .env.example .env
+cp .env.production.example .env
 nano .env
 ```
 
@@ -114,9 +114,7 @@ npm run build
 ## 7. Start API And Workers With PM2
 
 ```bash
-pm2 start npm --name hypermsg-api -- start
-pm2 start npm --name hypermsg-worker -- run worker
-pm2 start npm --name hypermsg-webhook-worker -- run webhook-worker
+pm2 start ecosystem.config.cjs
 pm2 save
 pm2 startup
 ```
@@ -129,6 +127,14 @@ Check status:
 pm2 status
 pm2 logs hypermsg-api
 ```
+
+This runs production commands only:
+
+- API: `node dist/src/server.js`
+- Message worker: `node dist/src/workers/messageWorker.js`
+- Webhook worker: `node dist/src/workers/webhookWorker.js`
+
+Do not use `npm run dev`, `npm run worker:dev`, or `npm run webhook-worker:dev` on the live server.
 
 ## 8. Configure Nginx
 
@@ -223,4 +229,3 @@ npx prisma migrate deploy
 npm run build
 pm2 restart hypermsg-api hypermsg-worker hypermsg-webhook-worker
 ```
-

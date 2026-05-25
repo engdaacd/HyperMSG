@@ -3,7 +3,6 @@ import cors from "cors";
 import helmet from "helmet";
 import { pinoHttp } from "pino-http";
 import path from "node:path";
-import { fileURLToPath } from "node:url";
 import { env } from "./config/env.js";
 import { logger } from "./config/logger.js";
 import { authRouter } from "./routes/auth.js";
@@ -14,7 +13,6 @@ import { integrationsRouter } from "./routes/integrations.js";
 import { errorHandler, notFound } from "./http/errors.js";
 
 const app = express();
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 app.use(helmet({
   contentSecurityPolicy: false,
@@ -35,7 +33,7 @@ app.use("/dashboard", dashboardRouter);
 app.use("/instances", instancesRouter);
 app.use("/messages", messagesRouter);
 app.use("/integrations", integrationsRouter);
-app.use("/", express.static(path.join(__dirname, "../public")));
+app.use("/", express.static(path.join(process.cwd(), "public")));
 app.use(notFound);
 app.use(errorHandler);
 

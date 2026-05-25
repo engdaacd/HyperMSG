@@ -1,6 +1,6 @@
-const API_URL = process.env.NEXTMSG_URL || "http://localhost:4000";
-const API_TOKEN = process.env.NEXTMSG_TOKEN;
-const INSTANCE_ID = process.env.NEXTMSG_INSTANCE_ID;
+const API_URL = process.env.HYPERMSG_URL || "http://localhost:4000";
+const API_TOKEN = process.env.HYPERMSG_TOKEN;
+const INSTANCE_ID = process.env.HYPERMSG_INSTANCE_ID;
 
 async function sendText() {
   const response = await fetch(`${API_URL}/messages/send`, {

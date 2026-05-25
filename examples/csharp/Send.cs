@@ -1,9 +1,9 @@
 using System.Net.Http.Headers;
 using System.Text;
 
-var apiUrl = Environment.GetEnvironmentVariable("NEXTMSG_URL") ?? "http://localhost:4000";
-var token = Environment.GetEnvironmentVariable("NEXTMSG_TOKEN")!;
-var instanceId = Environment.GetEnvironmentVariable("NEXTMSG_INSTANCE_ID")!;
+var apiUrl = Environment.GetEnvironmentVariable("HYPERMSG_URL") ?? "http://localhost:4000";
+var token = Environment.GetEnvironmentVariable("HYPERMSG_TOKEN")!;
+var instanceId = Environment.GetEnvironmentVariable("HYPERMSG_INSTANCE_ID")!;
 
 using var client = new HttpClient();
 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);

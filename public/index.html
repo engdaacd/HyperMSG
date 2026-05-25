@@ -3,14 +3,14 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>NextMsg WhatsApp API</title>
+    <title>HyperMSG WhatsApp API</title>
     <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
     <main>
       <section id="authView" class="auth-shell">
         <nav class="landing-nav">
-          <a class="logo-mark" href="/">NextMsg</a>
+          <a class="logo-mark" href="/">HyperMSG</a>
           <div class="nav-links">
             <a href="#home">Home</a>
             <a href="#whatsapp-api">WhatsApp API</a>
@@ -26,7 +26,7 @@
           <div class="beam beam-one"></div>
           <div class="beam beam-two"></div>
           <div class="hero-center">
-            <h1>NextMsg WhatsApp API</h1>
+            <h1>HyperMSG WhatsApp API</h1>
             <span class="hero-chip">self-hosted messaging infrastructure</span>
             <h2>Connect a WhatsApp account, issue tokens, and automate conversations.</h2>
             <p>Built for teams that want REST APIs, webhooks, message logs, and private hosting.</p>
@@ -46,7 +46,7 @@
             <div class="site-chat-head">
               <span class="wa-glyph">WA</span>
               <div>
-                <strong>NextMsg WhatsApp Bot</strong>
+                <strong>HyperMSG WhatsApp Bot</strong>
                 <small>Typically replies instantly</small>
               </div>
               <button id="siteChatClose" type="button" aria-label="Close WhatsApp chat">×</button>
@@ -54,12 +54,12 @@
             <div class="site-chat-body">
               <p class="bot-bubble">Hi. Ask about pricing, API setup, ERPNext integration, or connecting WhatsApp.</p>
               <div class="quick-replies">
-                <button type="button" data-chat-message="Hi, I want to test the NextMsg WhatsApp API.">Test API</button>
+                <button type="button" data-chat-message="Hi, I want to test the HyperMSG WhatsApp API.">Test API</button>
                 <button type="button" data-chat-message="Hi, how do I connect WhatsApp with ERPNext?">ERPNext</button>
                 <button type="button" data-chat-message="Hi, I need help setting up a WhatsApp chatbot.">Chatbot setup</button>
               </div>
               <form id="siteChatForm">
-                <input name="message" placeholder="Type your message" value="Hi, I need help with NextMsg" required />
+                <input name="message" placeholder="Type your message" value="Hi, I need help with HyperMSG" required />
                 <button type="submit">Chat</button>
               </form>
               <small>Opens WhatsApp. Auto-replies work when your dashboard instance is connected and chatbot rules are enabled.</small>
@@ -115,7 +115,7 @@
         <section id="whatsapp-api" class="next-section api-showcase">
           <div class="section-heading">
             <span class="soft-icon small">API</span>
-            <h2>Start working with NextMsg and send messages via WhatsApp REST API</h2>
+            <h2>Start working with HyperMSG and send messages via WhatsApp REST API</h2>
             <p class="section-copy">Make a chatbot and integrate WhatsApp with your ERP, CRM, app, or website. You can use any programmable language easily.</p>
           </div>
           <div class="code-panel">
@@ -150,7 +150,7 @@
   -d '{
     "instanceId": "instance_uuid",
     "to": "+15551234567",
-    "body": "Hello from NextMsg"
+    "body": "Hello from HyperMSG"
   }'</code></pre>
           </div>
         </section>
@@ -269,11 +269,11 @@
           <h2>FAQ</h2>
           <div class="faq-grid">
             <article class="faq-item open">
-              <button type="button">What is NextMsg?</button>
-              <p>NextMsg is a self-hosted WhatsApp API gateway for sending messages, receiving messages, and managing webhooks.</p>
+              <button type="button">What is HyperMSG?</button>
+              <p>HyperMSG is a self-hosted WhatsApp API gateway for sending messages, receiving messages, and managing webhooks.</p>
             </article>
             <article class="faq-item">
-              <button type="button">What can NextMsg do?</button>
+              <button type="button">What can HyperMSG do?</button>
               <p>Send text, media, and group messages, manage instances, create tokens, and receive webhook callbacks.</p>
             </article>
             <article class="faq-item">
@@ -306,10 +306,10 @@
         <footer class="landing-footer">
           <div>
             <div class="footer-logo">Next<span>Msg</span></div>
-            <p>Start working with NextMsg and send messages via WhatsApp REST API. We provide the dashboard, tokens, webhooks, logs, and infrastructure controls.</p>
+            <p>Start working with HyperMSG and send messages via WhatsApp REST API. We provide the dashboard, tokens, webhooks, logs, and infrastructure controls.</p>
           </div>
           <div>
-            <h3>NextMsg</h3>
+            <h3>HyperMSG</h3>
             <a href="#home">Home</a>
             <a href="#whatsapp-api">API</a>
             <a href="#how">How it works</a>
@@ -330,7 +330,7 @@
             <a>Webhooks</a>
             <a>Chatbots</a>
           </div>
-          <p class="copyright">© 2026 NextMsg. Self-hosted WhatsApp API platform.</p>
+          <p class="copyright">© 2026 HyperMSG. Self-hosted WhatsApp API platform.</p>
         </footer>
       </section>
 
@@ -338,7 +338,7 @@
         <header class="topbar">
           <div>
             <p class="eyebrow">Dashboard</p>
-            <h1>NextMsg</h1>
+            <h1>HyperMSG</h1>
           </div>
           <div class="topbar-actions">
             <span id="userEmail" class="muted"></span>
@@ -379,7 +379,7 @@
               <option value="">Select connected instance</option>
             </select>
             <input name="to" placeholder="Recipient phone, e.g. +15551234567" required />
-            <textarea name="body" placeholder="Message" maxlength="4096" required>Hello from NextMsg dashboard</textarea>
+            <textarea name="body" placeholder="Message" maxlength="4096" required>Hello from HyperMSG dashboard</textarea>
             <button>Send test</button>
           </form>
           <div id="testMessageResult" class="muted"></div>
@@ -388,7 +388,7 @@
           <h2>WhatsApp Chatbot</h2>
           <div class="setup-note">
             <strong>How this works:</strong>
-            <span>Connect an instance, create rules below, then visitors message your WhatsApp number from the website chat button. Incoming messages are matched by priority and trigger, and NextMsg sends the saved auto-reply through your connected WhatsApp account.</span>
+            <span>Connect an instance, create rules below, then visitors message your WhatsApp number from the website chat button. Incoming messages are matched by priority and trigger, and HyperMSG sends the saved auto-reply through your connected WhatsApp account.</span>
           </div>
           <form id="chatbotRuleForm" class="chatbot-form">
             <input name="name" placeholder="Rule name, e.g. Greeting" required />

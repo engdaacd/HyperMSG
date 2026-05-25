@@ -1,5 +1,5 @@
 {
-  "name": "nextmsg-whatsapp-api",
+  "name": "hypermsg-whatsapp-api",
   "version": "1.0.0",
   "description": "Self-hosted WhatsApp messaging API platform with dashboard, queues, webhooks, and SDK examples.",
   "type": "module",

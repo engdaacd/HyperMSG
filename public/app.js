@@ -1,5 +1,5 @@
-let session = localStorage.getItem("nextmsg_session");
-let currentUser = JSON.parse(localStorage.getItem("nextmsg_user") || "null");
+let session = localStorage.getItem("hypermsg_session");
+let currentUser = JSON.parse(localStorage.getItem("hypermsg_user") || "null");
 
 const authView = document.querySelector("#authView");
 const dashboardView = document.querySelector("#dashboardView");
@@ -15,7 +15,7 @@ Content-Type: application/json
 {
   "instanceId": "instance_uuid",
   "to": "+15551234567",
-  "body": "Hello from NextMsg"
+  "body": "Hello from HyperMSG"
 }`,
   curl: `curl -X POST http://localhost:4000/messages/send \\
   -H "Authorization: Bearer nmsg_xxx" \\
@@ -23,7 +23,7 @@ Content-Type: application/json
   -d '{
     "instanceId": "instance_uuid",
     "to": "+15551234567",
-    "body": "Hello from NextMsg"
+    "body": "Hello from HyperMSG"
   }'`,
   node: `const response = await fetch("http://localhost:4000/messages/send", {
   method: "POST",
@@ -34,7 +34,7 @@ Content-Type: application/json
   body: JSON.stringify({
     instanceId: "instance_uuid",
     to: "+15551234567",
-    body: "Hello from NextMsg"
+    body: "Hello from HyperMSG"
   })
 });
 
@@ -48,7 +48,7 @@ console.log(await response.json());`,
   body: JSON.stringify({
     instanceId: "instance_uuid",
     to: "+15551234567",
-    body: "Hello from NextMsg"
+    body: "Hello from HyperMSG"
   })
 }).then((response) => response.json()).then(console.log);`,
   angular: `this.http.post(
@@ -56,7 +56,7 @@ console.log(await response.json());`,
   {
     instanceId: "instance_uuid",
     to: "+15551234567",
-    body: "Hello from NextMsg"
+    body: "Hello from HyperMSG"
   },
   {
     headers: {
@@ -72,7 +72,7 @@ response = requests.post(
     json={
         "instanceId": "instance_uuid",
         "to": "+15551234567",
-        "body": "Hello from NextMsg",
+        "body": "Hello from HyperMSG",
     },
     timeout=15,
 )
@@ -82,7 +82,7 @@ print(response.json())`,
 $payload = json_encode([
   "instanceId" => "instance_uuid",
   "to" => "+15551234567",
-  "body" => "Hello from NextMsg",
+  "body" => "Hello from HyperMSG",
 ]);
 
 $ch = curl_init("http://localhost:4000/messages/send");
@@ -102,7 +102,7 @@ String json = """
 {
   "instanceId": "instance_uuid",
   "to": "+15551234567",
-  "body": "Hello from NextMsg"
+  "body": "Hello from HyperMSG"
 }
 """;
 
@@ -122,7 +122,7 @@ var response = await client.PostAsJsonAsync(
   new {
     instanceId = "instance_uuid",
     to = "+15551234567",
-    body = "Hello from NextMsg"
+    body = "Hello from HyperMSG"
   }
 );
 
@@ -138,7 +138,7 @@ var json = """
 {
   "instanceId": "instance_uuid",
   "to": "+15551234567",
-  "body": "Hello from NextMsg"
+  "body": "Hello from HyperMSG"
 }
 """;
 
@@ -158,7 +158,7 @@ import (
 )
 
 func main() {
-  body := []byte(\`{"instanceId":"instance_uuid","to":"+15551234567","body":"Hello from NextMsg"}\`)
+  body := []byte(\`{"instanceId":"instance_uuid","to":"+15551234567","body":"Hello from HyperMSG"}\`)
   req, _ := http.NewRequest("POST", "http://localhost:4000/messages/send", bytes.NewBuffer(body))
   req.Header.Set("Authorization", "Bearer nmsg_xxx")
   req.Header.Set("Content-Type", "application/json")
@@ -175,13 +175,13 @@ request["Content-Type"] = "application/json"
 request.body = {
   instanceId: "instance_uuid",
   to: "+15551234567",
-  body: "Hello from NextMsg"
+  body: "Hello from HyperMSG"
 }.to_json
 
 puts Net::HTTP.start(uri.hostname, uri.port) { |http| http.request(request) }.body`,
   vbnet: `Using client As New HttpClient()
   client.DefaultRequestHeaders.Add("Authorization", "Bearer nmsg_xxx")
-  Dim json = "{""instanceId"":""instance_uuid"",""to"":""+15551234567"",""body"":""Hello from NextMsg""}"
+  Dim json = "{""instanceId"":""instance_uuid"",""to"":""+15551234567"",""body"":""Hello from HyperMSG""}"
   Dim content = New StringContent(json, Encoding.UTF8, "application/json")
   Dim response = Await client.PostAsync("http://localhost:4000/messages/send", content)
   Console.WriteLine(Await response.Content.ReadAsStringAsync())
@@ -190,7 +190,7 @@ End Using`,
 curl_easy_setopt(curl, CURLOPT_URL, "http://localhost:4000/messages/send");
 curl_easy_setopt(curl, CURLOPT_POST, 1L);
 curl_easy_setopt(curl, CURLOPT_POSTFIELDS,
-  "{\\"instanceId\\":\\"instance_uuid\\",\\"to\\":\\"+15551234567\\",\\"body\\":\\"Hello from NextMsg\\"}");
+  "{\\"instanceId\\":\\"instance_uuid\\",\\"to\\":\\"+15551234567\\",\\"body\\":\\"Hello from HyperMSG\\"}");
 struct curl_slist *headers = NULL;
 headers = curl_slist_append(headers, "Authorization: Bearer nmsg_xxx");
 headers = curl_slist_append(headers, "Content-Type: application/json");
@@ -203,7 +203,7 @@ curl_easy_perform(curl);`,
    :content-type :json
    :form-params {:instanceId "instance_uuid"
                  :to "+15551234567"
-                 :body "Hello from NextMsg"}})`,
+                 :body "Hello from HyperMSG"}})`,
   dart: `final response = await http.post(
   Uri.parse("http://localhost:4000/messages/send"),
   headers: {
@@ -213,7 +213,7 @@ curl_easy_perform(curl);`,
   body: jsonEncode({
     "instanceId": "instance_uuid",
     "to": "+15551234567",
-    "body": "Hello from NextMsg",
+    "body": "Hello from HyperMSG",
   }),
 );`,
   swift: `var request = URLRequest(url: URL(string: "http://localhost:4000/messages/send")!)
@@ -221,7 +221,7 @@ request.httpMethod = "POST"
 request.setValue("Bearer nmsg_xxx", forHTTPHeaderField: "Authorization")
 request.setValue("application/json", forHTTPHeaderField: "Content-Type")
 request.httpBody = """
-{"instanceId":"instance_uuid","to":"+15551234567","body":"Hello from NextMsg"}
+{"instanceId":"instance_uuid","to":"+15551234567","body":"Hello from HyperMSG"}
 """.data(using: .utf8)
 
 URLSession.shared.dataTask(with: request) { data, _, _ in
@@ -231,7 +231,7 @@ URLSession.shared.dataTask(with: request) { data, _, _ in
 [request setHTTPMethod:@"POST"];
 [request setValue:@"Bearer nmsg_xxx" forHTTPHeaderField:@"Authorization"];
 [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-[request setHTTPBody:[@"{\\"instanceId\\":\\"instance_uuid\\",\\"to\\":\\"+15551234567\\",\\"body\\":\\"Hello from NextMsg\\"}" dataUsingEncoding:NSUTF8StringEncoding]];
+[request setHTTPBody:[@"{\\"instanceId\\":\\"instance_uuid\\",\\"to\\":\\"+15551234567\\",\\"body\\":\\"Hello from HyperMSG\\"}" dataUsingEncoding:NSUTF8StringEncoding]];
 [[NSURLSession.sharedSession dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
   NSLog(@"%@", [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
 }] resume];`,
@@ -242,7 +242,7 @@ URLSession.shared.dataTask(with: request) { data, _, _ in
 $body = @{
   instanceId = "instance_uuid"
   to = "+15551234567"
-  body = "Hello from NextMsg"
+  body = "Hello from HyperMSG"
 } | ConvertTo-Json
 
 Invoke-RestMethod -Uri "http://localhost:4000/messages/send" -Method Post -Headers $headers -ContentType "application/json" -Body $body`,
@@ -252,10 +252,10 @@ INSTANCE_ID="instance_uuid"
 curl -s http://localhost:4000/messages/send \\
   -H "Authorization: Bearer $TOKEN" \\
   -H "Content-Type: application/json" \\
-  -d "{\\"instanceId\\":\\"$INSTANCE_ID\\",\\"to\\":\\"+15551234567\\",\\"body\\":\\"Hello from NextMsg\\"}"`,
+  -d "{\\"instanceId\\":\\"$INSTANCE_ID\\",\\"to\\":\\"+15551234567\\",\\"body\\":\\"Hello from HyperMSG\\"}"`,
   android: `val client = OkHttpClient()
 val body = """
-{"instanceId":"instance_uuid","to":"+15551234567","body":"Hello from NextMsg"}
+{"instanceId":"instance_uuid","to":"+15551234567","body":"Hello from HyperMSG"}
 """.toRequestBody("application/json".toMediaType())
 
 val request = Request.Builder()
@@ -273,7 +273,7 @@ request.addValue("application/json", forHTTPHeaderField: "Content-Type")
 request.httpBody = try JSONSerialization.data(withJSONObject: [
   "instanceId": "instance_uuid",
   "to": "+15551234567",
-  "body": "Hello from NextMsg"
+  "body": "Hello from HyperMSG"
 ])
 
 URLSession.shared.dataTask(with: request).resume()`
@@ -310,16 +310,16 @@ function clearMessage(target) {
 function setAuthenticated(result) {
   session = result.token;
   currentUser = result.user;
-  localStorage.setItem("nextmsg_session", session);
-  localStorage.setItem("nextmsg_user", JSON.stringify(currentUser));
+  localStorage.setItem("hypermsg_session", session);
+  localStorage.setItem("hypermsg_user", JSON.stringify(currentUser));
   renderAuthState();
 }
 
 function clearSession() {
   session = null;
   currentUser = null;
-  localStorage.removeItem("nextmsg_session");
-  localStorage.removeItem("nextmsg_user");
+  localStorage.removeItem("hypermsg_session");
+  localStorage.removeItem("hypermsg_user");
   renderAuthState();
 }
 
@@ -332,12 +332,12 @@ function renderAuthState() {
 }
 
 function initLandingInteractions() {
-  const storedTheme = localStorage.getItem("nextmsg_theme");
+  const storedTheme = localStorage.getItem("hypermsg_theme");
   if (storedTheme === "midnight") document.body.classList.add("midnight");
 
   document.querySelector("#themeToggle")?.addEventListener("click", () => {
     document.body.classList.toggle("midnight");
-    localStorage.setItem("nextmsg_theme", document.body.classList.contains("midnight") ? "midnight" : "daylight");
+    localStorage.setItem("hypermsg_theme", document.body.classList.contains("midnight") ? "midnight" : "daylight");
   });
 
   document.querySelectorAll(".code-tab").forEach((tab) => {
@@ -409,7 +409,7 @@ function initLandingInteractions() {
   function openWhatsApp(message) {
     const phone = chatWidget?.dataset.whatsappPhone || "";
     const normalizedPhone = phone.replace(/[^\d]/g, "");
-    const text = encodeURIComponent(message.trim() || "Hi, I need help with NextMsg");
+    const text = encodeURIComponent(message.trim() || "Hi, I need help with HyperMSG");
     window.open(`https://wa.me/${normalizedPhone}?text=${text}`, "_blank", "noopener,noreferrer");
   }
 

@@ -1,4 +1,4 @@
-# NextMsg WhatsApp API Platform
+# HyperMSG WhatsApp API Platform
 
 Self-hosted WhatsApp messaging API reference implementation with:
 

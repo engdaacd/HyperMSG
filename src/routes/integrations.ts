@@ -15,8 +15,8 @@ function requireBridgeSecret(reqSecret: string | undefined) {
   if (reqSecret !== env.ERPNEXT_BRIDGE_SECRET) throw new HttpError(401, "Invalid ERPNext bridge secret");
 }
 
-function verifyNextMsgWebhook(req: any) {
-  const signature = req.header("x-nextmsg-signature");
+function verifyHyperMSGWebhook(req: any) {
+  const signature = req.header("x-hypermsg-signature") ?? req.header("x-nextmsg-signature");
   if (!signature) throw new HttpError(401, "Missing webhook signature");
   const expected = signWebhookBody(req.rawBody ?? JSON.stringify(req.body));
   const actualBuffer = Buffer.from(signature, "hex");
@@ -28,7 +28,7 @@ function verifyNextMsgWebhook(req: any) {
 
 integrationsRouter.post("/erpnext/send", async (req, res, next) => {
   try {
-    requireBridgeSecret(req.header("x-nextmsg-erpnext-secret"));
+    requireBridgeSecret(req.header("x-hypermsg-erpnext-secret") ?? req.header("x-nextmsg-erpnext-secret"));
     const body = z.object({
       instanceId: z.string().uuid(),
       to: z.string().min(3),
@@ -76,9 +76,9 @@ integrationsRouter.post("/erpnext/send", async (req, res, next) => {
   }
 });
 
-integrationsRouter.post("/erpnext/nextmsg-webhook", async (req, res, next) => {
+integrationsRouter.post("/erpnext/hypermsg-webhook", async (req, res, next) => {
   try {
-    verifyNextMsgWebhook(req);
+    verifyHyperMSGWebhook(req);
     const body = z.object({
       event: z.string(),
       data: z.object({

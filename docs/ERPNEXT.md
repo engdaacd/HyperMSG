@@ -1,9 +1,9 @@
 # ERPNext / Frappe Integration
 
-NextMsg can integrate with ERPNext in two simple directions:
+HyperMSG can integrate with ERPNext in two simple directions:
 
-1. ERPNext sends WhatsApp messages through NextMsg.
-2. NextMsg receives WhatsApp replies and writes them back to ERPNext as `Communication` records.
+1. ERPNext sends WhatsApp messages through HyperMSG.
+2. HyperMSG receives WhatsApp replies and writes them back to ERPNext as `Communication` records.
 
 This works because Frappe/ERPNext exposes DocTypes through `/api/resource/{doctype}` and supports token authentication using:
 
@@ -16,7 +16,7 @@ Official docs:
 - Frappe REST API: https://docs.frappe.io/framework/user/en/guides/integration/rest_api
 - Frappe token authentication: https://docs.frappe.io/framework/v14/user/en/api/rest
 
-## 1. Configure NextMsg
+## 1. Configure HyperMSG
 
 In `.env`:
 
@@ -27,7 +27,7 @@ ERPNEXT_API_SECRET=your_erpnext_api_secret
 ERPNEXT_BRIDGE_SECRET=use-a-long-random-secret
 ```
 
-Restart NextMsg:
+Restart HyperMSG:
 
 ```bash
 npm run dev
@@ -39,7 +39,7 @@ Endpoint:
 
 ```http
 POST /integrations/erpnext/send
-X-NextMsg-ERPNext-Secret: use-a-long-random-secret
+X-HyperMSG-ERPNext-Secret: use-a-long-random-secret
 Content-Type: application/json
 ```
 
@@ -47,7 +47,7 @@ Payload:
 
 ```json
 {
-  "instanceId": "nextmsg-instance-id",
+  "instanceId": "hypermsg-instance-id",
   "to": "+15551234567",
   "body": "Hello from ERPNext",
   "referenceDoctype": "Customer",
@@ -55,7 +55,7 @@ Payload:
 }
 ```
 
-NextMsg sends the WhatsApp message and creates an ERPNext `Communication` linked to the reference document.
+HyperMSG sends the WhatsApp message and creates an ERPNext `Communication` linked to the reference document.
 
 Use [examples/erpnext/client-script-send-whatsapp.js](../examples/erpnext/client-script-send-whatsapp.js) to add a **Send WhatsApp** button to ERPNext Customer.
 
@@ -63,10 +63,10 @@ Use [examples/erpnext/server-script-send-payment-reminder.py](../examples/erpnex
 
 ## 3. Save Incoming WhatsApp Replies In ERPNext
 
-Create a NextMsg webhook pointing to:
+Create a HyperMSG webhook pointing to:
 
 ```text
-http://your-nextmsg-host:4000/integrations/erpnext/nextmsg-webhook
+http://your-hypermsg-host:4000/integrations/erpnext/hypermsg-webhook
 ```
 
 Events:
@@ -75,7 +75,7 @@ Events:
 ["message.received"]
 ```
 
-When a WhatsApp reply arrives, NextMsg verifies its webhook signature and creates an ERPNext `Communication` with:
+When a WhatsApp reply arrives, HyperMSG verifies its webhook signature and creates an ERPNext `Communication` with:
 
 - `communication_medium`: `WhatsApp`
 - `sent_or_received`: `Received`

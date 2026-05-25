@@ -15,6 +15,8 @@ new Worker<WebhookJob>("webhooks", async (job) => {
       method: "POST",
       headers: {
         "content-type": "application/json",
+        "x-hypermsg-event": job.data.event,
+        "x-hypermsg-signature": signWebhookBody(body),
         "x-nextmsg-event": job.data.event,
         "x-nextmsg-signature": signWebhookBody(body)
       },

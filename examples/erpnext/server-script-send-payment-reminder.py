@@ -1,13 +1,13 @@
 # ERPNext Server Script example.
 # Use this as a scheduled script or adapt it to a button/action script.
-# It sends a payment reminder through NextMsg for overdue Sales Invoices.
+# It sends a payment reminder through HyperMSG for overdue Sales Invoices.
 
 import frappe
 import requests
 
-NEXTMSG_URL = "http://localhost:4000"
-NEXTMSG_INSTANCE_ID = "replace-with-instance-id"
-NEXTMSG_BRIDGE_SECRET = "replace-with-erpnext-bridge-secret"
+HYPERMSG_URL = "http://localhost:4000"
+HYPERMSG_INSTANCE_ID = "replace-with-instance-id"
+HYPERMSG_BRIDGE_SECRET = "replace-with-erpnext-bridge-secret"
 
 invoices = frappe.get_all(
     "Sales Invoice",
@@ -26,13 +26,13 @@ for invoice in invoices:
     )
 
     response = requests.post(
-        f"{NEXTMSG_URL}/integrations/erpnext/send",
+        f"{HYPERMSG_URL}/integrations/erpnext/send",
         headers={
             "Content-Type": "application/json",
-            "X-NextMsg-ERPNext-Secret": NEXTMSG_BRIDGE_SECRET,
+            "X-HyperMSG-ERPNext-Secret": HYPERMSG_BRIDGE_SECRET,
         },
         json={
-            "instanceId": NEXTMSG_INSTANCE_ID,
+            "instanceId": HYPERMSG_INSTANCE_ID,
             "to": invoice.contact_mobile,
             "body": message,
             "referenceDoctype": "Sales Invoice",

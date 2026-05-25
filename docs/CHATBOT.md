@@ -1,11 +1,11 @@
 # WhatsApp Chatbot
 
-NextMsg includes a simple rule-based WhatsApp chatbot for fast automation.
+HyperMSG includes a simple rule-based WhatsApp chatbot for fast automation.
 
 ## How It Works
 
 1. A WhatsApp message arrives on a connected instance.
-2. NextMsg logs the inbound message.
+2. HyperMSG logs the inbound message.
 3. Enabled chatbot rules are checked by priority.
 4. The first matching rule sends an automatic WhatsApp reply.
 5. The bot reply is saved in message logs and emits a `message.status` webhook.
@@ -39,7 +39,7 @@ How it connects to the bot:
 1. Edit `public/index.html` and set `data-whatsapp-phone` on `#siteChatWidget` to your connected WhatsApp number without `+`, spaces, or dashes.
 2. A visitor clicks the website chat button or quick reply.
 3. The browser opens `wa.me` with a pre-filled message to your WhatsApp number.
-4. When the visitor sends the message in WhatsApp, your connected NextMsg instance receives it.
+4. When the visitor sends the message in WhatsApp, your connected HyperMSG instance receives it.
 5. The dashboard chatbot rules match the incoming text and send the auto-reply.
 
 Example:

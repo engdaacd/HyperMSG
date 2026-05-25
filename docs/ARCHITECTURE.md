@@ -1,6 +1,6 @@
-# NextMsg Architecture
+# HyperMSG Architecture
 
-NextMsg is a multi-tenant messaging API. Users own WhatsApp instances, API tokens, webhook endpoints, and message logs.
+HyperMSG is a multi-tenant messaging API. Users own WhatsApp instances, API tokens, webhook endpoints, and message logs.
 
 ```mermaid
 flowchart LR

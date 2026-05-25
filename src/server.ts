@@ -39,4 +39,4 @@ app.use("/", express.static(path.join(__dirname, "../public")));
 app.use(notFound);
 app.use(errorHandler);
 
-app.listen(env.PORT, () => logger.info({ port: env.PORT }, "NextMsg API listening"));
+app.listen(env.PORT, () => logger.info({ port: env.PORT }, "HyperMSG API listening"));

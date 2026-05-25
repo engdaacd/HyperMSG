@@ -88,7 +88,7 @@ Response includes the raw token once:
 {
   "instanceId": "uuid",
   "to": "+15551234567",
-  "body": "Hello from NextMsg"
+  "body": "Hello from HyperMSG"
 }
 ```
 
@@ -146,7 +146,7 @@ Create endpoint:
 
 ```json
 {
-  "url": "https://customer.example/webhooks/nextmsg",
+  "url": "https://customer.example/webhooks/hypermsg",
   "events": ["message.received", "message.status"]
 }
 ```
@@ -169,8 +169,8 @@ Webhook payload:
 Headers:
 
 ```http
-x-nextmsg-event: message.received
-x-nextmsg-signature: hex_hmac_sha256
+x-hypermsg-event: message.received
+x-hypermsg-signature: hex_hmac_sha256
 ```
 
 Verify by computing `HMAC_SHA256(raw_request_body, WEBHOOK_SIGNING_SECRET)`.

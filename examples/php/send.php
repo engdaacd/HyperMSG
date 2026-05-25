@@ -1,7 +1,7 @@
 <?php
-$apiUrl = getenv('NEXTMSG_URL') ?: 'http://localhost:4000';
-$token = getenv('NEXTMSG_TOKEN');
-$instanceId = getenv('NEXTMSG_INSTANCE_ID');
+$apiUrl = getenv('HYPERMSG_URL') ?: 'http://localhost:4000';
+$token = getenv('HYPERMSG_TOKEN');
+$instanceId = getenv('HYPERMSG_INSTANCE_ID');
 
 $payload = json_encode([
     'instanceId' => $instanceId,

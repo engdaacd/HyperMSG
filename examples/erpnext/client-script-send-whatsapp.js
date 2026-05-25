@@ -1,10 +1,10 @@
 // ERPNext Client Script example for Customer.
 // Add this in ERPNext: Customize Form -> Client Script -> DocType: Customer.
-// Replace the constants with your NextMsg values.
+// Replace the constants with your HyperMSG values.
 
-const NEXTMSG_URL = "http://localhost:4000";
-const NEXTMSG_INSTANCE_ID = "replace-with-instance-id";
-const NEXTMSG_BRIDGE_SECRET = "replace-with-erpnext-bridge-secret";
+const HYPERMSG_URL = "http://localhost:4000";
+const HYPERMSG_INSTANCE_ID = "replace-with-instance-id";
+const HYPERMSG_BRIDGE_SECRET = "replace-with-erpnext-bridge-secret";
 
 frappe.ui.form.on("Customer", {
   refresh(frm) {
@@ -23,14 +23,14 @@ frappe.ui.form.on("Customer", {
         default: `Hello ${frm.doc.customer_name || frm.doc.name}, this is a message from ERPNext.`
       });
 
-      const response = await fetch(`${NEXTMSG_URL}/integrations/erpnext/send`, {
+      const response = await fetch(`${HYPERMSG_URL}/integrations/erpnext/send`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "X-NextMsg-ERPNext-Secret": NEXTMSG_BRIDGE_SECRET
+          "X-HyperMSG-ERPNext-Secret": HYPERMSG_BRIDGE_SECRET
         },
         body: JSON.stringify({
-          instanceId: NEXTMSG_INSTANCE_ID,
+          instanceId: HYPERMSG_INSTANCE_ID,
           to: phone,
           body: message.message,
           referenceDoctype: frm.doctype,

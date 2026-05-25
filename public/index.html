@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>NextMsg WhatsApp API</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main>
+      <section id="authView" class="auth-shell">
+        <nav class="landing-nav">
+          <a class="logo-mark" href="/">NextMsg</a>
+          <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#whatsapp-api">WhatsApp API</a>
+            <a href="#tutorials">Tutorials</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#faq">FAQ</a>
+            <a href="#signin">Sign in</a>
+          </div>
+          <button class="theme-toggle" id="themeToggle" type="button">Midnight</button>
+        </nav>
+
+        <section id="home" class="next-hero">
+          <div class="beam beam-one"></div>
+          <div class="beam beam-two"></div>
+          <div class="hero-center">
+            <h1>NextMsg WhatsApp API</h1>
+            <span class="hero-chip">self-hosted messaging infrastructure</span>
+            <h2>Connect a WhatsApp account, issue tokens, and automate conversations.</h2>
+            <p>Built for teams that want REST APIs, webhooks, message logs, and private hosting.</p>
+            <div class="hero-actions">
+              <a class="button-link" href="#signin">Create account</a>
+              <a class="button-link secondary-link" href="#whatsapp-api">API Documentation</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="language-strip" aria-label="Supported API examples">
+          <span class="lang-card"><i class="lang-icon">🌐</i><strong>REST</strong></span>
+          <span class="lang-card"><i class="lang-icon">php</i><strong>PHP</strong></span>
+          <span class="lang-card"><i class="lang-icon">JS</i><strong>Node</strong></span>
+          <span class="lang-card"><i class="lang-icon">A</i><strong>Angular</strong></span>
+          <span class="lang-card"><i class="lang-icon">Py</i><strong>Python</strong></span>
+          <span class="lang-card"><i class="lang-icon">☕</i><strong>Java</strong></span>
+          <span class="lang-card"><i class="lang-icon">.N</i><strong>.Net</strong></span>
+          <span class="lang-card"><i class="lang-icon">🤖</i><strong>Android</strong></span>
+          <span class="lang-card"><i class="lang-icon"></i><strong>iOS</strong></span>
+          <span class="lang-card"><i class="lang-icon">Go</i><strong>Go</strong></span>
+          <span class="lang-card"><i class="lang-icon">Rb</i><strong>Ruby</strong></span>
+          <span class="lang-card"><i class="lang-icon">VB</i><strong>VB.NET</strong></span>
+          <span class="lang-card"><i class="lang-icon">C#</i><strong>C#</strong></span>
+          <span class="lang-card"><i class="lang-icon">C</i><strong>C</strong></span>
+          <span class="lang-card"><i class="lang-icon">Clj</i><strong>Clojure</strong></span>
+          <span class="lang-card"><i class="lang-icon">D</i><strong>Dart</strong></span>
+          <span class="lang-card"><i class="lang-icon">Sw</i><strong>Swift</strong></span>
+          <span class="lang-card"><i class="lang-icon">PS</i><strong>PowerShell</strong></span>
+          <span class="lang-card"><i class="lang-icon">$</i><strong>Shell</strong></span>
+          <span class="lang-card"><i class="lang-icon">Obj</i><strong>Objective-C</strong></span>
+        </section>
+
+        <section id="how" class="next-section centered-section">
+          <h2>How it works?</h2>
+          <p class="section-copy">Fixed price, no hidden fees, no cost per message<br />Quick onboarding in less than 5 minutes</p>
+          <div class="process-grid">
+            <article>
+              <div class="soft-icon">01</div>
+              <h3>Create Account</h3>
+              <p>Sign up and create an instance to get your instance ID and token.</p>
+            </article>
+            <article>
+              <div class="soft-icon">02</div>
+              <h3>Scan QR</h3>
+              <p>Authenticate your instance to send messages through your WhatsApp number.</p>
+            </article>
+            <article>
+              <div class="soft-icon">03</div>
+              <h3>Start Sending messages</h3>
+              <p>Send messages via API with your favorite programming language.</p>
+            </article>
+          </div>
+        </section>
+
+        <section id="whatsapp-api" class="next-section api-showcase">
+          <div class="section-heading">
+            <span class="soft-icon small">API</span>
+            <h2>Start working with NextMsg and send messages via WhatsApp REST API</h2>
+            <p class="section-copy">Make a chatbot and integrate WhatsApp with your ERP, CRM, app, or website. You can use any programmable language easily.</p>
+          </div>
+          <div class="code-panel">
+            <div class="code-tabs">
+              <button type="button" class="code-tab active" data-code="curl">Curl</button>
+              <button type="button" class="code-tab" data-code="rest">REST</button>
+              <button type="button" class="code-tab" data-code="node">Node.js</button>
+              <button type="button" class="code-tab" data-code="javascript">JavaScript</button>
+              <button type="button" class="code-tab" data-code="angular">Angular</button>
+              <button type="button" class="code-tab" data-code="python">Python</button>
+              <button type="button" class="code-tab" data-code="php">PHP</button>
+              <button type="button" class="code-tab" data-code="java">Java</button>
+              <button type="button" class="code-tab" data-code="dotnet">.Net</button>
+              <button type="button" class="code-tab" data-code="csharp">C#</button>
+              <button type="button" class="code-tab" data-code="go">Go</button>
+              <button type="button" class="code-tab" data-code="ruby">Ruby</button>
+              <button type="button" class="code-tab" data-code="vbnet">VB.NET</button>
+              <button type="button" class="code-tab" data-code="c">C</button>
+              <button type="button" class="code-tab" data-code="clojure">Clojure</button>
+              <button type="button" class="code-tab" data-code="dart">Dart</button>
+              <button type="button" class="code-tab" data-code="swift">Swift</button>
+              <button type="button" class="code-tab" data-code="objectivec">Objective-C</button>
+              <button type="button" class="code-tab" data-code="powershell">PowerShell</button>
+              <button type="button" class="code-tab" data-code="shell">Shell</button>
+              <button type="button" class="code-tab" data-code="android">Android</button>
+              <button type="button" class="code-tab" data-code="ios">iOS</button>
+              <button id="copyCodeButton" type="button">Copy</button>
+            </div>
+            <pre><code id="apiCode">curl -X POST http://localhost:4000/messages/send \
+  -H "Authorization: Bearer nmsg_xxx" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "instanceId": "instance_uuid",
+    "to": "+254700016642",
+    "body": "Hello from NextMsg"
+  }'</code></pre>
+          </div>
+        </section>
+
+        <section class="next-section integration-section">
+          <div class="illustration-card" aria-hidden="true">
+            <div class="screen-shape"></div>
+            <div class="chart-bars"><span></span><span></span><span></span></div>
+            <div class="target-shape"></div>
+          </div>
+          <div>
+            <h2>Communicate with your audience through WhatsApp API</h2>
+            <p class="section-copy">Reach customers faster with reliable messages, callbacks, and automated workflows.</p>
+            <ul class="check-list">
+              <li>Boost notification open rates</li>
+              <li>Reduce order processing time</li>
+              <li>Serve customers with lower wait time</li>
+            </ul>
+          </div>
+        </section>
+
+        <section id="features" class="next-section usecase-section">
+          <h2>Experience the potential of WhatsApp business API use cases</h2>
+          <div class="usecase-grid">
+            <article><span></span>Chatbots</article>
+            <article><span></span>Remarketing</article>
+            <article><span></span>Customer Support</article>
+            <article><span></span>Multimedia Messages</article>
+            <article><span></span>Notifications</article>
+            <article><span></span>Reminders</article>
+            <article><span></span>Verification & Authentication</article>
+            <article><span></span>Customer Communication</article>
+            <article><span></span>Automation</article>
+          </div>
+        </section>
+
+        <section id="tutorials" class="next-section tutorials-section">
+          <h2>Tutorials</h2>
+          <div class="tutorial-grid">
+            <article>
+              <h3>How to Send WhatsApp Messages</h3>
+              <p>How to send using PHP</p>
+              <p>How to send using Node.js</p>
+              <p>How to send using Python</p>
+              <p>Send images and documents</p>
+              <p>Send message to WhatsApp group</p>
+            </article>
+            <article>
+              <h3>How to Receive WhatsApp Messages</h3>
+              <p>Receive using webhook</p>
+              <p>Receive using Node.js</p>
+              <p>Receive using Python</p>
+              <p>Receive delivery status callbacks</p>
+            </article>
+            <article>
+              <h3>How to make WhatsApp chatbot</h3>
+              <p>Build a chatbot using PHP</p>
+              <p>Build a chatbot using Python</p>
+              <p>Build a chatbot using C#</p>
+              <p>Connect bot replies to webhooks</p>
+            </article>
+          </div>
+        </section>
+
+        <section id="pricing" class="next-section pricing-section">
+          <div>
+            <h2>Our comfortable rates</h2>
+            <p class="section-copy">Self-host your own infrastructure and scale by instance. Choose the plan that suits your business.</p>
+            <div class="billing-toggle" aria-label="Billing period">
+              <button type="button" class="active" data-billing="monthly">Monthly</button>
+              <button type="button" data-billing="annual">Annual</button>
+            </div>
+            <a class="button-link" href="#signin">Create free account</a>
+          </div>
+          <div class="price-grid">
+            <article>
+              <span>Starter package</span>
+              <h3><b id="starterPrice">$39</b><small id="starterPeriod">/Month</small></h3>
+              <p>Valid for 30 days</p>
+              <p>No cost per message</p>
+              <p>Receive messages via webhook</p>
+              <p>Send media and documents</p>
+              <a class="button-link" href="#signin">Try it now</a>
+            </article>
+            <article>
+              <span>Growth package</span>
+              <h3><b id="growthPrice">$390</b><small id="growthPeriod">/year</small></h3>
+              <p>Valid for 365 days</p>
+              <p>No cost per message</p>
+              <p>Webhook support</p>
+              <p>Message logs and tokens</p>
+              <a class="button-link" href="#signin">Get started</a>
+            </article>
+          </div>
+        </section>
+
+        <section class="next-section calculator-section">
+          <div>
+            <h2>Estimate dashboard throughput</h2>
+            <p class="section-copy">Adjust your expected traffic and see the safe queue volume for one WhatsApp instance.</p>
+          </div>
+          <div class="calculator-card">
+            <label>
+              Messages per hour
+              <input id="messageVolume" type="range" min="20" max="1200" value="240" step="20" />
+            </label>
+            <div class="calc-result">
+              <strong id="volumeValue">240</strong>
+              <span>messages/hour</span>
+              <p id="queueAdvice">Use queue workers and keep instance limits conservative.</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="faq" class="next-section faq-section">
+          <h2>FAQ</h2>
+          <div class="faq-grid">
+            <article class="faq-item open">
+              <button type="button">What is NextMsg?</button>
+              <p>NextMsg is a self-hosted WhatsApp API gateway for sending messages, receiving messages, and managing webhooks.</p>
+            </article>
+            <article class="faq-item">
+              <button type="button">What can NextMsg do?</button>
+              <p>Send text, media, and group messages, manage instances, create tokens, and receive webhook callbacks.</p>
+            </article>
+            <article class="faq-item">
+              <button type="button">How stable is it?</button>
+              <p>The platform uses queues, retries, logs, and worker processes. Production stability depends on hosting and WhatsApp session health.</p>
+            </article>
+            <article class="faq-item">
+              <button type="button">Can I send bulk messages?</button>
+              <p>Use rate limits and send only opted-in messages. Spam-like behavior can cause WhatsApp account restrictions.</p>
+            </article>
+          </div>
+        </section>
+
+        <section id="signin" class="signin-page-section">
+          <div class="signin-card">
+            <div class="signin-logo">Next<span>Msg</span></div>
+            <h2>Welcome</h2>
+            <p class="section-copy">Sign in to your account or create a new one.</p>
+            <form id="authForm">
+              <input name="email" type="email" placeholder="Email" autocomplete="email" required />
+              <input name="password" type="password" placeholder="Password" autocomplete="current-password" minlength="10" required />
+              <button name="mode" value="login">Sign in</button>
+              <div class="divider">Don't have an account?</div>
+              <button name="mode" value="register" type="submit" class="secondary">Sign up</button>
+            </form>
+            <div id="authMessage" class="notice" hidden></div>
+          </div>
+        </section>
+
+        <footer class="landing-footer">
+          <div>
+            <div class="footer-logo">Next<span>Msg</span></div>
+            <p>Start working with NextMsg and send messages via WhatsApp REST API. We provide the dashboard, tokens, webhooks, logs, and infrastructure controls.</p>
+          </div>
+          <div>
+            <h3>NextMsg</h3>
+            <a href="#home">Home</a>
+            <a href="#whatsapp-api">API</a>
+            <a href="#how">How it works</a>
+            <a href="#features">Features</a>
+            <a href="#pricing">Pricing</a>
+          </div>
+          <div>
+            <h3>Useful links</h3>
+            <a href="#tutorials">Tutorials</a>
+            <a href="#faq">FAQ</a>
+            <a href="/docs/API.md">API Documentation</a>
+            <a href="#signin">Sign in</a>
+          </div>
+          <div>
+            <h3>Integrations</h3>
+            <a>CRM</a>
+            <a>ERP</a>
+            <a>Webhooks</a>
+            <a>Chatbots</a>
+          </div>
+          <p class="copyright">© 2026 NextMsg. Self-hosted WhatsApp API platform.</p>
+        </footer>
+      </section>
+
+      <section id="dashboardView" hidden>
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Dashboard</p>
+            <h1>NextMsg</h1>
+          </div>
+          <div class="topbar-actions">
+            <span id="userEmail" class="muted"></span>
+            <button id="logoutButton" class="secondary">Log out</button>
+          </div>
+        </header>
+        <div id="appMessage" class="notice" hidden></div>
+        <section class="grid">
+        <div class="panel">
+          <h2>Instances</h2>
+          <form id="instanceForm">
+            <input name="name" placeholder="Instance name" required />
+            <button>Create</button>
+          </form>
+          <div id="instances"></div>
+        </div>
+        <div class="panel">
+          <h2>API Tokens</h2>
+          <form id="tokenForm">
+            <input name="name" placeholder="Token name" required />
+            <button>Create</button>
+          </form>
+          <pre id="newToken"></pre>
+          <div id="tokens"></div>
+        </div>
+        <div class="panel">
+          <h2>Webhooks</h2>
+          <form id="webhookForm">
+            <input name="url" type="url" placeholder="https://example.com/webhook" required />
+            <button>Add</button>
+          </form>
+          <div id="webhooks"></div>
+        </div>
+        <div class="panel wide">
+          <h2>Send Test Message</h2>
+          <form id="testMessageForm" class="stack-form">
+            <select name="instanceId" id="testInstanceSelect" required>
+              <option value="">Select connected instance</option>
+            </select>
+            <input name="to" placeholder="Recipient phone, e.g. +15551234567" required />
+            <textarea name="body" placeholder="Message" maxlength="4096" required>Hello from NextMsg dashboard</textarea>
+            <button>Send test</button>
+          </form>
+          <div id="testMessageResult" class="muted"></div>
+        </div>
+        <div class="panel wide">
+          <h2>WhatsApp Chatbot</h2>
+          <form id="chatbotRuleForm" class="chatbot-form">
+            <input name="name" placeholder="Rule name, e.g. Greeting" required />
+            <select name="instanceId" id="chatbotInstanceSelect">
+              <option value="">All instances</option>
+            </select>
+            <select name="matchType" required>
+              <option value="CONTAINS">Contains</option>
+              <option value="EXACT">Exact</option>
+              <option value="STARTS_WITH">Starts with</option>
+              <option value="DEFAULT">Default fallback</option>
+            </select>
+            <input name="trigger" placeholder="Trigger, e.g. hi, price, help" />
+            <input name="priority" type="number" min="1" max="10000" value="100" />
+            <textarea name="response" placeholder="Auto-reply message" maxlength="4096" required>Hello, thanks for messaging us. How can we help?</textarea>
+            <label class="checkbox-line">
+              <input name="enabled" type="checkbox" checked />
+              Enabled
+            </label>
+            <button>Create rule</button>
+          </form>
+          <div id="chatbotRules"></div>
+        </div>
+        <div class="panel wide">
+          <h2>Message Logs</h2>
+          <div id="messages"></div>
+        </div>
+      </section>
+      </section>
+    </main>
+    <script src="/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,122 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum InstanceStatus {
+  DISCONNECTED
+  QR_PENDING
+  CONNECTED
+  FAILED
+}
+
+enum MessageDirection {
+  INBOUND
+  OUTBOUND
+}
+
+enum MessageStatus {
+  QUEUED
+  SENT
+  DELIVERED
+  READ
+  FAILED
+  RECEIVED
+}
+
+enum ChatbotMatchType {
+  CONTAINS
+  EXACT
+  STARTS_WITH
+  DEFAULT
+}
+
+model User {
+  id           String   @id @default(uuid())
+  email        String   @unique
+  passwordHash String
+  createdAt    DateTime @default(now())
+  instances    Instance[]
+  tokens       ApiToken[]
+  webhooks     WebhookEndpoint[]
+  chatbotRules ChatbotRule[]
+}
+
+model Instance {
+  id            String         @id @default(uuid())
+  userId        String
+  name          String
+  status        InstanceStatus @default(DISCONNECTED)
+  phoneNumber   String?
+  lastQrDataUrl String?
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  user          User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  messages      MessageLog[]
+  chatbotRules  ChatbotRule[]
+}
+
+model ChatbotRule {
+  id          String           @id @default(uuid())
+  userId      String
+  instanceId  String?
+  name        String
+  enabled     Boolean          @default(true)
+  priority    Int              @default(100)
+  matchType   ChatbotMatchType @default(CONTAINS)
+  trigger     String
+  response    String
+  createdAt   DateTime         @default(now())
+  updatedAt   DateTime         @updatedAt
+  user        User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  instance    Instance?        @relation(fields: [instanceId], references: [id], onDelete: Cascade)
+
+  @@index([userId, enabled, priority])
+  @@index([instanceId, enabled, priority])
+}
+
+model ApiToken {
+  id         String   @id @default(uuid())
+  userId     String
+  name       String
+  tokenHash  String   @unique
+  last4      String
+  revokedAt  DateTime?
+  createdAt  DateTime @default(now())
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model WebhookEndpoint {
+  id        String   @id @default(uuid())
+  userId    String
+  url       String
+  enabled   Boolean  @default(true)
+  events    String[]
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model MessageLog {
+  id           String           @id @default(uuid())
+  userId       String
+  instanceId   String
+  direction    MessageDirection
+  status       MessageStatus
+  to           String?
+  from         String?
+  chatId       String?
+  body         String?
+  mediaUrl     String?
+  providerId   String?
+  error        String?
+  createdAt    DateTime         @default(now())
+  updatedAt    DateTime         @updatedAt
+  instance     Instance         @relation(fields: [instanceId], references: [id], onDelete: Cascade)
+
+  @@index([userId, createdAt])
+  @@index([instanceId, createdAt])
+}

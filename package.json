@@ -6,9 +6,11 @@
   "scripts": {
     "dev": "tsx watch src/server.ts",
     "build": "tsc",
-    "start": "node dist/server.js",
-    "worker": "tsx src/workers/messageWorker.ts",
-    "webhook-worker": "tsx src/workers/webhookWorker.ts",
+    "start": "node dist/src/server.js",
+    "worker": "node dist/src/workers/messageWorker.js",
+    "webhook-worker": "node dist/src/workers/webhookWorker.js",
+    "worker:dev": "tsx src/workers/messageWorker.ts",
+    "webhook-worker:dev": "tsx src/workers/webhookWorker.ts",
     "prisma:generate": "prisma generate",
     "prisma:migrate": "prisma migrate dev",
     "test": "vitest run"

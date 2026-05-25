@@ -62,6 +62,7 @@ The included QR adapter uses WhatsApp Web automation through `whatsapp-web.js`. 
 
 - [Architecture](docs/ARCHITECTURE.md)
 - [REST API](docs/API.md)
+- [Ubuntu Deployment](docs/DEPLOYMENT.md)
 - [ERPNext Integration](docs/ERPNEXT.md)
 - [WhatsApp Chatbot](docs/CHATBOT.md)
 - [Testing Strategy](docs/TESTING.md)

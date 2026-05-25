@@ -287,9 +287,11 @@
           </div>
         </section>
 
-        <section id="signin" class="signin-page-section">
+        <section id="signin" class="signin-page-section" hidden>
+          <button class="signin-backdrop" id="signinBackdrop" type="button" aria-label="Close sign in"></button>
           <div class="signin-card">
-            <div class="signin-logo">Next<span>Msg</span></div>
+            <button class="signin-close" id="signinClose" type="button" aria-label="Close sign in">×</button>
+            <div class="signin-logo">Hyper<span>MSG</span></div>
             <h2>Welcome</h2>
             <p class="section-copy">Sign in to your account or create a new one.</p>
             <form id="authForm">
@@ -305,7 +307,7 @@
 
         <footer class="landing-footer">
           <div>
-            <div class="footer-logo">Next<span>Msg</span></div>
+            <div class="footer-logo">Hyper<span>MSG</span></div>
             <p>Start working with HyperMSG and send messages via WhatsApp REST API. We provide the dashboard, tokens, webhooks, logs, and infrastructure controls.</p>
           </div>
           <div>

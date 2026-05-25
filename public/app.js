@@ -5,6 +5,7 @@ const authView = document.querySelector("#authView");
 const dashboardView = document.querySelector("#dashboardView");
 const authMessage = document.querySelector("#authMessage");
 const appMessage = document.querySelector("#appMessage");
+const signinPanel = document.querySelector("#signin");
 
 const codeExamples = {
   rest: `POST /messages/send HTTP/1.1
@@ -327,13 +328,44 @@ function renderAuthState() {
   const isAuthed = Boolean(session);
   authView.hidden = isAuthed;
   dashboardView.hidden = !isAuthed;
+  if (isAuthed) closeSignin();
   document.querySelector("#userEmail").textContent = currentUser?.email || "";
   if (isAuthed) refresh();
+}
+
+function openSignin() {
+  if (!signinPanel) return;
+  signinPanel.hidden = false;
+  clearMessage(authMessage);
+  document.querySelector("#authForm input[name='email']")?.focus();
+}
+
+function closeSignin() {
+  if (!signinPanel) return;
+  signinPanel.hidden = true;
+  if (location.hash === "#signin") {
+    history.replaceState(null, "", `${location.pathname}${location.search}`);
+  }
 }
 
 function initLandingInteractions() {
   const storedTheme = localStorage.getItem("hypermsg_theme");
   if (storedTheme === "midnight") document.body.classList.add("midnight");
+
+  document.querySelectorAll('a[href="#signin"]').forEach((link) => {
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      openSignin();
+    });
+  });
+
+  document.querySelector("#signinClose")?.addEventListener("click", closeSignin);
+  document.querySelector("#signinBackdrop")?.addEventListener("click", closeSignin);
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !signinPanel?.hidden) closeSignin();
+  });
+
+  if (location.hash === "#signin") openSignin();
 
   document.querySelector("#themeToggle")?.addEventListener("click", () => {
     document.body.classList.toggle("midnight");
